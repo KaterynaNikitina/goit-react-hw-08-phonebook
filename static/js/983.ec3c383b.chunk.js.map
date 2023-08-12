@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/983.ec3c383b.chunk.js","mappings":"mKAUA,UARiB,WACf,OACEA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,aAIT,C","sources":["pages/HomePage.jsx"],"sourcesContent":["import React from 'react';\n\nconst HomePage = () => {\n  return (\n    <div>\n      Home Page\n    </div>\n  )\n}\n\nexport default HomePage;\n"],"names":["_jsx","children"],"sourceRoot":""}
