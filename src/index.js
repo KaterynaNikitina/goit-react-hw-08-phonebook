@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store}>  
     <PersistGate loading={<Loader />} persistor={persistor}>
       <BrowserRouter basename='/goit-react-hw-08-phonebook'>
@@ -17,5 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </BrowserRouter>
     </PersistGate>
     </Provider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
