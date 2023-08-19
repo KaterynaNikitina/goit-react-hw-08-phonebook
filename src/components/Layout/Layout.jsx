@@ -6,14 +6,11 @@ import { Suspense } from 'react';
 
 const Layout = () => {
   return (
-     <Suspense fallback={<Loader />}>
+    <Suspense fallback={<Loader />}>
       <Navigation />
-     <Outlet />
-     </Suspense>
-    
-      
-    
-  )
-}
+      <Outlet />
+    </Suspense>
+  );
+};
 
 export default Layout;

@@ -1,11 +1,12 @@
 import React from 'react';
+import Greeting from 'components/Greeting/Greeting';
 
 const HomePage = () => {
   return (
     <div>
-      Home Page
+      <Greeting />
     </div>
-  )
-}
+  );
+};
 
 export default HomePage;

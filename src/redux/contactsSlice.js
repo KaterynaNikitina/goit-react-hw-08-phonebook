@@ -51,7 +51,8 @@ export const contactsSlice = createSlice({
       .addCase(deleteContactThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         const deletedContactIndex = state.contacts.findIndex(
-          contact => contact.id === action.payload.id);
+          contact => contact.id === action.payload.id
+        );
         state.contacts.splice(deletedContactIndex, 1);
       })
       .addCase(deleteContactThunk.rejected, (state, action) => {

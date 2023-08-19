@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const Item = styled.li`
+width: 500px;
 font-size: 20px;
 margin-bottom: 16px;
 margin-top: 16px;
 display: flex;
-justify-content: space-between
+justify-content: space-between;
 `
 
 export const ItemBtn = styled.button`

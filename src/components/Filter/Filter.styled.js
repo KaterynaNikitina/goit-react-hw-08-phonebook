@@ -1,18 +1,15 @@
 import styled from 'styled-components';
 
-export const Label = styled.label`
-  display: block;
-  font-size: 20px;
+export const Title = styled.h2`
+  text-align: center;
   margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
 `;
 
-export const Input = styled.input`
-  width: 368px;
-  margin-left: auto;
-  margin-right: auto;
-  /* height: 32px; */
-  border-radius: 4px;
+export const Paragr = styled.p`
   font-size: 20px;
-  padding: 6px 16px 6px;
-  margin-top: 16px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
 `;

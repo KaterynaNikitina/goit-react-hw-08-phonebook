@@ -1,32 +1,43 @@
 import React from 'react';
 import UserMenu from 'components/UserMenu/UserMenu';
-import { StyledNavLink } from 'components/Navigation/Navigation.styled';
+import {
+  Div,
+  Header,
+  StyledNavLink,
+} from 'components/Navigation/Navigation.styled';
 
 import { useSelector } from 'react-redux';
 import { selectAuthentificated } from 'redux/selectors';
 
 const Navigation = () => {
- 
   const authentificated = useSelector(selectAuthentificated);
 
   return (
-    <div>
+    <Header>
       <nav>
         {!authentificated ? (
-          <>
-            <StyledNavLink to="/">Home</StyledNavLink>
-            <StyledNavLink to="/register">Sign Up</StyledNavLink>
-            <StyledNavLink to="/login">Log In</StyledNavLink>
-          </>
+          <Div>
+            <div>
+              <StyledNavLink to="/">Home</StyledNavLink>
+            </div>
+            <div>
+              <StyledNavLink to="/register">Sign Up</StyledNavLink>
+              <StyledNavLink to="/login">Log In</StyledNavLink>
+            </div>
+          </Div>
         ) : (
-          <>
-            <StyledNavLink to="/">Home</StyledNavLink>
-            <StyledNavLink to="/contacts">Contacts</StyledNavLink>
-            <UserMenu />
-          </>
+          <Div>
+            <div>
+              <StyledNavLink to="/">Home</StyledNavLink>
+              <StyledNavLink to="/contacts">Contacts</StyledNavLink>
+            </div>
+            <Div>
+              <UserMenu />
+            </Div>
+          </Div>
         )}
       </nav>
-    </div>
+    </Header>
   );
 };
 

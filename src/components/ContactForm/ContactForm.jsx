@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addNewContactThunk } from 'redux/contactsOperations';
 import { selectUserContacts } from 'redux/selectors';
 import { Notify } from 'notiflix';
+import { Button, TextField } from '@mui/material';
+import Box from '@mui/material/Box';
 
 const ContactForm = () => {
-
   const dispatch = useDispatch();
   const contacts = useSelector(selectUserContacts);
 
@@ -16,7 +17,7 @@ const ContactForm = () => {
     const number = form.elements.contactNumber.value;
 
     const isExistingContact = contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase() 
+      contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (isExistingContact) {
       Notify.failure(`${name} is already in contacts list!`);
@@ -34,17 +35,47 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        <p>Name:</p>
-        <input name="contactName" type="text" required></input>
-      </label>
-      <br />
-      <label>
-        <p>Number:</p>
-        <input name="contactNumber" type="text" required></input>
-      </label>
-      <br />
-      <button type="submit">Add contact</button>
+      <Box
+        sx={{
+          width: '100vw',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <h1>Phonebook</h1>
+        <TextField
+          id="outlined-basic-1"
+          label="Email"
+          variant="outlined"
+          type="text"
+          name="contactName"
+          required
+          minLength={2}
+          sx={{
+            width: '400px',
+            marginBottom: '20px',
+          }}
+        ></TextField>
+        <TextField
+          id="outlined-basic-1"
+          label="Password"
+          variant="outlined"
+          type="text"
+          name="contactNumber"
+          required
+          minLength={2}
+          sx={{
+            width: '400px',
+            marginBottom: '20px',
+          }}
+        ></TextField>
+
+        <Button variant="contained" type="submit" sx={{ width: '400px' }}>
+          Add contact
+        </Button>
+      </Box>
     </form>
   );
 };

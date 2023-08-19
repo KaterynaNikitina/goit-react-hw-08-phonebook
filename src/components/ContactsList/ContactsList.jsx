@@ -1,4 +1,4 @@
-import ContactItem  from 'components/ContactItem/ContactItem';
+import ContactItem from 'components/ContactItem/ContactItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { List } from './ContactsList.styled';
 import { useEffect } from 'react';
@@ -11,9 +11,7 @@ import {
   selectContactsLoading,
   selectContactError,
   selectFilter,
-  // selectFilteredContacts,
 } from 'redux/selectors';
-// import { Notify } from 'notiflix';
 
 const ContactsList = () => {
   const authentificated = useSelector(selectAuthentificated);
@@ -33,27 +31,30 @@ const ContactsList = () => {
 
   const formattedFilter = filter.toLowerCase();
 
-  const filteredContacts = contacts?.length > 0
-  ? (contacts.filter(contact => contact.name.toLowerCase().includes(formattedFilter)))
-  : [];
+  const filteredContacts =
+    contacts?.length > 0
+      ? contacts.filter(contact =>
+          contact.name.toLowerCase().includes(formattedFilter)
+        )
+      : [];
 
   return (
-
     <div>
       {isLoading && <Loader />}
       {error && <p>Ooops, something went wrong...</p>}
       <List>
-       {!visibleContacts
-        ? <p>Your Phonebook is empty. Add new contacts</p>
-        : filteredContacts.length === 0 
-        ? (`There is no contct ${filter} in your Phonebook`)
-        : filteredContacts.map(contact => {
-          return <ContactItem key={contact.id} contact={contact}/>
+        {!visibleContacts ? (
+          <p>Your Phonebook is empty. Add new contacts</p>
+        ) : filteredContacts.length === 0 ? (
+          `There is no contct ${filter} in your Phonebook`
+        ) : (
+          filteredContacts.map(contact => {
+            return <ContactItem key={contact.id} contact={contact} />;
           })
-       }
+        )}
       </List>
     </div>
   );
-}
+};
 
 export default ContactsList;
