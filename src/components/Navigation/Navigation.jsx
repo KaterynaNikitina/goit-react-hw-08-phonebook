@@ -14,7 +14,7 @@ const Navigation = () => {
 
   return (
     <Header>
-      <nav>
+      {/* <nav> */}
         {!authentificated ? (
           <Div>
             <div>
@@ -36,7 +36,7 @@ const Navigation = () => {
             </Div>
           </Div>
         )}
-      </nav>
+      {/* </nav> */}
     </Header>
   );
 };

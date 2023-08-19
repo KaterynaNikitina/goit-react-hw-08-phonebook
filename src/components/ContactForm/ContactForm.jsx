@@ -37,7 +37,7 @@ const ContactForm = () => {
     <form onSubmit={handleSubmit}>
       <Box
         sx={{
-          width: '100vw',
+          width: '800px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
