@@ -47,7 +47,7 @@ const ContactForm = () => {
         <h1>Phonebook</h1>
         <TextField
           id="outlined-basic-1"
-          label="Email"
+          label="Name"
           variant="outlined"
           type="text"
           name="contactName"
